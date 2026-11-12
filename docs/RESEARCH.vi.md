@@ -4,9 +4,11 @@ Khảo sát ngày **12/11/2026**, dựa trên GitHub API, README và hướng d�
 
 ## Đề xuất cho navtuan12
 
-Profile nên tập trung vào **DevOps / Platform Engineering**, với bằng chứng từ công việc: tự động hóa AWS, Kubernetes HA, CI/CD cho hơn 100 dịch vụ, observability và DevSecOps. Chọn phong cách gọn, có nhận diện riêng, hỗ trợ giao diện sáng/tối.
+Profile tập trung vào **DevOps / Platform Engineering**, với bằng chứng từ công việc: tự động hóa AWS, Kubernetes HA, CI/CD cho hơn 100 dịch vụ, observability và DevSecOps. Phần kinh nghiệm theo công ty và danh sách dự án đã được bỏ theo lựa chọn bố cục; Toolbox chỉ giữ icon. Chọn phong cách gọn, có nhận diện riêng, hỗ trợ giao diện sáng/tối.
 
-Bản hiện tại dùng banner SVG tự thiết kế và icon của **Skill Icons**, lưu trực tiếp trong repo. README có thể hiển thị mà không gọi dịch vụ tạo ảnh bên ngoài. Các chỉ số trong mục Selected impact lấy từ CV, không phải số đo trực tiếp từ GitHub.
+Bản hiện tại dùng banner SVG tự thiết kế và icon của **Skill Icons**, lưu trực tiếp trong repo. README có thể hiển thị mà không gọi dịch vụ tạo ảnh bên ngoài. Các thẻ số liệu trong mục Selected impact lấy từ CV, không phải số đo trực tiếp từ GitHub.
+
+Bản cập nhật tích hợp **lowlighter/metrics**: overview, lịch contribution 3D cả năm (`isocalendar`), tỷ lệ ngôn ngữ (`languages`). Hai dashboard sáng/tối được lưu trong repo, cập nhật mỗi ngày qua Actions.
 
 ## Các repo đã khảo sát
 
@@ -15,18 +17,18 @@ Bản hiện tại dùng banner SVG tự thiết kế và icon của **Skill Ico
 | [awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) | Bộ sưu tập profile mẫu theo phong cách | Dùng để tham khảo bố cục; không phải công cụ render | Tham khảo cách trình bày, điều chỉnh theo CV |
 | [github-profile-readme-generator](https://github.com/rahuldkjain/github-profile-readme-generator) | Form sinh Markdown, social links, skills và widget | Nhanh để tạo khung; nội dung mặc định cần biên tập | Hợp cho bản đầu; bản này được viết riêng |
 | [skill-icons](https://github.com/tandpfun/skill-icons) | Icon công nghệ đồng bộ, có theme sáng/tối | Endpoint `skillicons.dev`; có thể lưu SVG về repo | **Đã dùng** cho 12 công nghệ có trong CV |
-| [shields](https://github.com/badges/shields) | Badge cho email, stack, trạng thái build và dữ liệu repo | Badge động phụ thuộc dịch vụ và nguồn dữ liệu | Hữu ích cho repo dự án; profile hiện dùng liên kết chữ gọn hơn |
+| [shields](https://github.com/badges/shields) | Badge cho email, stack, trạng thái build và dữ liệu repo | Badge động phụ thuộc dịch vụ và nguồn dữ liệu | Hữu ích cho repo dự án; profile dùng liên kết chữ gọn hơn |
 | [capsule-render](https://github.com/kyechan99/capsule-render) | Header/footer dạng wave, gradient, text | README dự án khuyến nghị deploy riêng để dùng ổn định | Thay thế nhanh nếu muốn đổi banner; bản này có SVG riêng |
 | [readme-typing-svg](https://github.com/DenverCoder1/readme-typing-svg) | Dòng chữ có hiệu ứng gõ | SVG động từ endpoint; hỗ trợ tự host | Tùy chọn nếu thích animation; nội dung tĩnh dễ đọc hơn trên mobile |
 | [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) | Stats, top languages, pin cards | Public endpoint là best-effort; upstream khuyến nghị Actions sinh SVG hoặc self-host | Lựa chọn đầu tiên nếu bổ sung một card thống kê |
-| [metrics](https://github.com/lowlighter/metrics) | Dashboard SVG với nhiều plugin về hoạt động, ngôn ngữ, repo | Actions / Docker / self-host; quyền token tùy plugin, cấu hình nhiều hơn | Hợp nếu muốn dashboard sâu; chọn ít plugin có ích |
+| [metrics](https://github.com/lowlighter/metrics) | Dashboard SVG với nhiều plugin về hoạt động, ngôn ngữ, repo | Actions / Docker / self-host; quyền token tùy plugin, cấu hình nhiều hơn | **Đã tích hợp** overview, calendar 3D và languages |
 | [snk](https://github.com/Platane/snk) | Animation rắn ăn contribution graph | GitHub Action sinh SVG/GIF, có palette sáng/tối; cần bước lưu output | Một animation ở cuối profile là đủ nếu muốn cá tính hơn |
 | [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) | Card chuỗi ngày đóng góp | Có endpoint, Actions và self-host; upstream khuyên tự host để ổn định | Tùy chọn; không đại diện đầy đủ cho công việc tại doanh nghiệp |
 | [github-profile-trophy](https://github.com/ryo-ma/github-profile-trophy) | Trophy dựa trên chỉ số GitHub | Dịch vụ sinh SVG theo tài khoản | Ít ưu tiên với profile tuyển dụng DevOps; dễ làm bố cục dài |
 
 ## Nếu bổ sung widget sau này
 
-Ưu tiên **một card github-readme-stats được sinh thành SVG bằng GitHub Actions** và lưu trong repo, thay vì nhúng nhiều endpoint động. Hướng dẫn upstream: [GitHub Actions setup](https://github.com/anuraghazra/github-readme-stats#github-actions).
+Profile hiện dùng Metrics. Nếu thay thế bằng stats đơn giản hơn, có thể dùng **một card github-readme-stats được sinh thành SVG bằng GitHub Actions** và lưu trong repo. Hướng dẫn upstream: [GitHub Actions setup](https://github.com/anuraghazra/github-readme-stats#github-actions).
 
 Stats công khai có thể dùng `GITHUB_TOKEN` theo hướng dẫn upstream. Dữ liệu private cần token và cấu hình phù hợp. Không cần bổ sung token để dùng README hiện tại. Trước khi bật workflow, kiểm tra quyền ghi `contents`, nhánh được bảo vệ và phiên bản action; nên pin action bằng commit SHA đã kiểm tra.
 
@@ -55,3 +57,7 @@ Top languages tính từ mã nguồn repo không thể hiện đầy đủ năng
 - [Metrics: setup options](https://github.com/lowlighter/metrics#-setup)
 
 Thời điểm cập nhật ghi nhận từ API, chỉ để tham chiếu: awesome-profile 11/09/2026; generator 28/10/2025; skill-icons 27/02/2026; shields 12/11/2026; capsule-render 11/11/2026; typing-svg 09/11/2026; stats 01/10/2026; metrics 29/05/2026; snk 18/10/2026; streak-stats 09/11/2026; trophy 27/10/2026. `pushed_at` không đồng nghĩa với ngày phát hành hoặc thay đổi mã nguồn gần nhất.
+
+## Kiểm tra tích hợp Metrics
+
+Module `achievements` của image stable bị lỗi truy vấn GraphQL tới GitHub Projects classic đã bị ngừng hỗ trợ khi chạy với tài khoản thật. Module `activity` cũng gặp lỗi khi payload sự kiện PR thiếu trường mà phiên bản này yêu cầu. Bản cuối dùng overview cùng `isocalendar` và `languages`, là các module đã chạy thành công. Endpoint `metrics.lecoq.io` trả HTTP 500 khi thử, nên dashboard được sinh cục bộ bằng image upstream và lưu SVG vào repo.

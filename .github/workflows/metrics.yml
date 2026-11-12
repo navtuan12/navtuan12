@@ -1,0 +1,87 @@
+name: Profile metrics
+
+on:
+  schedule:
+    - cron: "23 1 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/metrics.yml
+
+concurrency:
+  group: profile-metrics-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    name: Render ${{ matrix.appearance }} dashboard
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - appearance: light
+            foreground: "#142a43"
+            muted: "#526b81"
+            accent: "#087d70"
+          - appearance: dark
+            foreground: "#edf5ff"
+            muted: "#a5b8d5"
+            accent: "#71e3cd"
+    steps:
+      - name: Check Metrics credentials
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          if [ -z "$METRICS_TOKEN" ]; then
+            echo "::error::Add the METRICS_TOKEN Actions secret with a scopeless GitHub classic token. See docs/SETUP.vi.md."
+            exit 1
+          fi
+      - name: Render overview, calendar and languages
+        # Run the documented Docker interface with raw environment inputs.
+        # Pin the tested stable image as well as its source in the setup docs.
+        env:
+          INPUT_TOKEN: "${{ secrets.METRICS_TOKEN }}"
+          INPUT_COMMITTER_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          INPUT_COMMITTER_BRANCH: "${{ github.ref_name }}"
+          INPUT_USER: "navtuan12"
+          INPUT_FILENAME: "assets/metrics-${{ matrix.appearance }}.svg"
+          INPUT_TEMPLATE: "classic"
+          INPUT_BASE: "header, activity, community"
+          INPUT_REPOSITORIES_FORKS: "no"
+          INPUT_REPOSITORIES_AFFILIATIONS: "owner"
+          INPUT_CONFIG_TIMEZONE: "Asia/Ho_Chi_Minh"
+          INPUT_CONFIG_DISPLAY: "large"
+          INPUT_CONFIG_ANIMATIONS: "yes"
+          INPUT_CONFIG_ORDER: "base.header, base.activity, base.community, isocalendar, languages"
+          INPUT_CONFIG_PADDING: "8, 16"
+          INPUT_PLUGIN_ISOCALENDAR: "yes"
+          INPUT_PLUGIN_ISOCALENDAR_DURATION: "full-year"
+          INPUT_PLUGIN_LANGUAGES: "yes"
+          INPUT_PLUGIN_LANGUAGES_LIMIT: "6"
+          INPUT_PLUGIN_LANGUAGES_SECTIONS: "most-used"
+          INPUT_PLUGIN_LANGUAGES_DETAILS: "percentage"
+          INPUT_PLUGIN_LANGUAGES_INDEPTH: "no"
+          INPUT_PLUGINS_ERRORS_FATAL: "yes"
+          INPUT_EXTRAS_CSS: |
+            svg { color: ${{ matrix.muted }}; }
+            h1, h2, h3 { color: ${{ matrix.accent }}; }
+            .field { color: ${{ matrix.foreground }}; }
+            .field svg { fill: ${{ matrix.muted }}; }
+            .field.error { color: #d73a49; }
+          INPUT_OUTPUT_ACTION: "commit"
+          INPUT_NOTICE_RELEASES: "no"
+          INPUT_DEBUG: "no"
+        run: |
+          docker_env_args=()
+          while IFS= read -r name; do
+            docker_env_args+=(--env "$name")
+          done < <(compgen -e | sort | grep -E '^(INPUT_|GITHUB_)')
+          docker run --init --rm "${docker_env_args[@]}" \
+            ghcr.io/lowlighter/metrics@sha256:257392f90340f916cb8b815026f259399f6b246d3eb7de38b58bfe7a07bd5b65

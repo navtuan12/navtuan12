@@ -5,11 +5,28 @@
 - `README.md` đặt ở gốc repo **[navtuan12/navtuan12](https://github.com/navtuan12/navtuan12)**.
 - `assets/banner-dark.svg` và `assets/banner-light.svg` là banner tự thiết kế.
 - `assets/skills-dark.svg`, `assets/skills-light.svg`, `assets/NOTICE.md` và `assets/licenses/skill-icons-MIT.txt` là icon cùng ghi nhận nguồn và giấy phép.
+- `assets/impact-{dark,light}.svg` là thẻ thành tích lấy từ CV.
+- `assets/metrics-{dark,light}.svg` là dashboard Metrics dùng dữ liệu GitHub thật.
+- `.github/workflows/metrics.yml` tự cập nhật dashboard mỗi ngày.
 - `docs/` là ghi chú nghiên cứu và hướng dẫn, không hiển thị trực tiếp trên profile.
 
 Repo profile phải công khai, có tên trùng username, và có README không rỗng ở nhánh mặc định. Bạn đã có đúng repo; sau khi cập nhật README và assets vào nhánh mặc định, GitHub sẽ hiển thị trên trang cá nhân. Xem [hướng dẫn GitHub](https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme).
 
-Nếu có PR nháp đi kèm, mở tab **Files changed** để xem nội dung và banner; khi ưng ý thì chuyển PR sang Ready for review và merge. PR chưa merge sẽ chưa thay đổi profile đang hiển thị.
+Nếu có PR đi kèm, mở tab **Files changed** để xem nội dung và banner; khi ưng ý thì chuyển PR sang Ready for review và merge. PR chưa merge sẽ chưa thay đổi profile đang hiển thị.
+
+## Dashboard Metrics
+
+Workflow dùng [lowlighter/metrics](https://github.com/lowlighter/metrics), qua giao diện Docker chính thức, pin image stable 3.34.0 bằng digest `sha256:257392f90340f916cb8b815026f259399f6b246d3eb7de38b58bfe7a07bd5b65` (mã nguồn tương ứng revision `65836723097537a54cd8eb90f61839426b4266b6`), gồm:
+
+- **Overview:** hoạt động và số liệu cộng đồng GitHub.
+- **Isocalendar:** lịch contribution dạng 3D trong một năm.
+- **Languages:** tối đa 6 ngôn ngữ, hiển thị phần trăm; loại fork, không clone repo để phân tích sâu.
+
+Actions secret **`METRICS_TOKEN`** là token classic không chọn scope để chỉ đọc dữ liệu công khai, theo [hướng dẫn upstream](https://github.com/lowlighter/metrics/blob/master/.github/readme/partials/documentation/setup/action.md). Không cần quyền `repo`. `GITHUB_TOKEN` chỉ dùng để ghi file SVG về repo, với `contents: write`.
+
+Secret `METRICS_TOKEN` đã được cấu hình qua ô nhập bí mật. Sau khi merge, GitHub đăng ký workflow và lần push cấu hình vào `main` kích hoạt render đầu tiên; có thể chạy lại bằng **Actions → Profile metrics → Run workflow**. Các SVG kèm PR đã được sinh thử bằng đúng image và token này. Workflow có lịch **01:23 UTC / 08:23 Việt Nam** hàng ngày; lịch chỉ chạy từ nhánh mặc định. Push thay đổi cấu hình vào `main` cũng kích hoạt render. Workflow không dùng `pull_request_target` hoặc chạy trên nội dung từ fork.
+
+Hai biến thể chạy tuần tự để tránh xung đột khi commit. Nếu GitHub không cho Actions ghi vào nhánh được bảo vệ, điều chỉnh quy tắc nhánh hoặc chuyển sang cơ chế PR. Nếu một plugin lỗi, workflow thất bại và giữ SVG cũ để không xuất bản dashboard chứa lỗi. Giới hạn thời gian là 20 phút mỗi biến thể.
 
 ## Thông tin trong Edit profile
 
