@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+  <title id="title">Tuan Nguyen — DevOps Engineer</title>
+  <desc id="desc">Build. Ship. Keep it running. Cloud infrastructure, delivery automation, and observability.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf5ff"/><stop offset="1" stop-color="#e0f3f1"/></linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M 28 0 L 0 0 0 28" fill="none" stroke="#bfd4e5" stroke-width="0.6" opacity="0.45"/></pattern>
+  </defs>
+  <rect width="1000" height="320" rx="18" fill="url(#bg)"/>
+  <rect x="605" y="1" width="394" height="318" rx="18" fill="url(#grid)"/>
+  <path d="M44 67H956" stroke="#bfd4e5"/>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12" letter-spacing="1.8" fill="#4b647e">
+    <text x="44" y="41">NVAT / NAVTUAN12</text>
+    <text x="956" y="41" text-anchor="end">CLOUD · PLATFORM · DELIVERY</text>
+  </g>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+    <text x="44" y="113" font-size="18" font-weight="600" fill="#087d70">TUAN NGUYEN <tspan fill="#4b647e" font-weight="400"> / DevOps Engineer</tspan></text>
+    <g font-size="53" font-weight="800" letter-spacing="-1.8" fill="#142a43">
+      <text x="41" y="181">BUILD. SHIP.</text>
+      <text x="41" y="241">KEEP IT RUNNING.</text>
+    </g>
+    <text x="44" y="283" font-size="14" fill="#4b647e">AWS &amp; on-premises <tspan fill="#087d70"> / </tspan> Infrastructure as code <tspan fill="#087d70"> / </tspan> Reliability</text>
+  </g>
+  <g fill="none" stroke="#bfd4e5" stroke-width="1.5">
+    <circle cx="791" cy="186" r="103" stroke-dasharray="3 7"/>
+    <path d="M704 139H874V230H704Z" stroke="#087d70" opacity="0.65"/>
+    <path d="M791 140V231" stroke-dasharray="4 5"/>
+  </g>
+  <g fill="#f8fcff" stroke="#bfd4e5">
+    <rect x="653" y="114" width="103" height="51" rx="10"/>
+    <rect x="823" y="114" width="103" height="51" rx="10"/>
+    <rect x="738" y="205" width="107" height="51" rx="10"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="13" font-weight="600" text-anchor="middle">
+    <text x="704" y="144" fill="#142a43">&gt;_ build</text>
+    <text x="874" y="144" fill="#142a43">↑ ship</text>
+    <text x="791" y="235" fill="#087d70">◎ observe</text>
+  </g>
+  <g fill="#087d70"><circle cx="791" cy="139" r="4"/><circle cx="704" cy="230" r="4"/><circle cx="874" cy="230" r="4"/></g>
+  <text x="791" y="289" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="10" letter-spacing="2" text-anchor="middle" fill="#4b647e">AUTOMATE. OBSERVE. IMPROVE.</text>
+</svg>
