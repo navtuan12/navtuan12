@@ -5,7 +5,6 @@
 - `README.md` đặt ở gốc repo **[navtuan12/navtuan12](https://github.com/navtuan12/navtuan12)**.
 - `assets/banner-dark.svg` và `assets/banner-light.svg` là banner tự thiết kế.
 - `assets/skills-dark.svg`, `assets/skills-light.svg`, `assets/NOTICE.md` và `assets/licenses/skill-icons-MIT.txt` là icon cùng ghi nhận nguồn và giấy phép.
-- `assets/impact-{dark,light}.svg` là thẻ thành tích lấy từ CV.
 - `assets/metrics-{dark,light}.svg` là dashboard Metrics dùng dữ liệu GitHub thật.
 - `.github/workflows/metrics.yml` tự cập nhật dashboard mỗi ngày.
 - `docs/` là ghi chú nghiên cứu và hướng dẫn, không hiển thị trực tiếp trên profile.

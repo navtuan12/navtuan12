@@ -6,7 +6,7 @@ Khảo sát ngày **12/11/2026**, dựa trên GitHub API, README và hướng d�
 
 Profile tập trung vào **DevOps / Platform Engineering**, với bằng chứng từ công việc: tự động hóa AWS, Kubernetes HA, CI/CD cho hơn 100 dịch vụ, observability và DevSecOps. Phần kinh nghiệm theo công ty và danh sách dự án đã được bỏ theo lựa chọn bố cục; Toolbox chỉ giữ icon. Chọn phong cách gọn, có nhận diện riêng, hỗ trợ giao diện sáng/tối.
 
-Bản hiện tại dùng banner SVG tự thiết kế và icon của **Skill Icons**, lưu trực tiếp trong repo. README có thể hiển thị mà không gọi dịch vụ tạo ảnh bên ngoài. Các thẻ số liệu trong mục Selected impact lấy từ CV, không phải số đo trực tiếp từ GitHub.
+Bản hiện tại dùng banner SVG tự thiết kế và icon của **Skill Icons**, lưu trực tiếp trong repo. README có thể hiển thị mà không gọi dịch vụ tạo ảnh bên ngoài.
 
 Bản cập nhật tích hợp **lowlighter/metrics**: overview, lịch contribution 3D cả năm (`isocalendar`), tỷ lệ ngôn ngữ (`languages`). Hai dashboard sáng/tối được lưu trong repo, cập nhật mỗi ngày qua Actions.
 

@@ -14,6 +14,4 @@ https://raw.githubusercontent.com/tandpfun/skill-icons/main/LICENSE
 
 Both icon strips are stored locally so the profile does not require the icon service at display time.
 
-`impact-dark.svg` and `impact-light.svg` are original vector cards using approximate career figures from the supplied CV. They are separate from GitHub account statistics.
-
 `metrics-dark.svg` and `metrics-light.svg` are generated from real GitHub account data with [lowlighter/metrics](https://github.com/lowlighter/metrics), under the MIT license preserved in `licenses/metrics-MIT.txt`. The workflow configuration is in `.github/workflows/metrics.yml`.

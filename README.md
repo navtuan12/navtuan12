@@ -19,14 +19,6 @@ I build and operate cloud-native infrastructure across **AWS and on-premises env
 - **Reliable delivery** — CI/CD, OpenTelemetry, the LGTM stack, and troubleshooting production systems.
 - **DevSecOps** — SAST, SCA, DAST, secrets management, and security gates in delivery pipelines.
 
-### Selected impact
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/impact-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/impact-light.svg">
-  <img alt="Career highlights: approximately 60–70% lower idle EC2 costs; CI/CD for 100+ services and 200+ builds per day; approximately 25–30% lower MTTR; MATLAB environments provisioned and torn down in under 30 minutes." src="assets/impact-dark.svg" width="100%">
-</picture>
-
 ### Toolbox
 
 <picture>
